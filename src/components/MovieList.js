@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import MovieItem from './MovieItem';
 
 class MovieList extends Component{
   constructor(props) {
@@ -24,19 +25,31 @@ class MovieList extends Component{
 
 
   render() {
+
+    let MovieItems = this.props.movies.map(m => (
+      <MovieItem
+        key={m.imdbID}
+        title={m.Title}
+        year={m.Year}
+        poster={m.Poster}
+      />
+    ));
     return (
-      <form onSubmit={this.onSubmit}>
-        <label>
-          <input
-            type="text"
-            value={this.state.input}
-            autoComplete="off"
-            placeholder="Search"
-            onChange={this.handleChange}
-          />
-        </label>
-        <button type='submit'>Search</button>
-      </form>
+      <div>
+        <form onSubmit={this.onSubmit}>
+          <label>
+            <input
+              type="text"
+              value={this.state.input}
+              autoComplete="off"
+              placeholder="Search"
+              onChange={this.handleChange}
+            />
+          </label>
+          <button type="submit">Search</button>
+          {MovieItems}
+        </form>
+      </div>
     );
   }
 } 

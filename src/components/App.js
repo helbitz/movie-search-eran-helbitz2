@@ -24,7 +24,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <MovieList handleSearch={this.handleSearch} />
+        <MovieList
+          movies = {this.state.movies} 
+          handleSearch={this.handleSearch} 
+        />
       </div>
     );
   }

@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
+      movies: [],
+      movie: {}
     };
     this.handleSearch = this.handleSearch.bind(this);
   }
@@ -20,13 +21,22 @@ class App extends Component {
       this.setState({ movies });
     });  
   }
+  
+  handleShowMovie(title, year){
+    getMovie(title, year).then(data => {
+      let movie = {};
+      movie = {...data};
+      this.setState({movie});
+    })
+  }
 
   render() {
     return (
       <div>
         <MovieList
           movies = {this.state.movies} 
-          handleSearch={this.handleSearch} 
+          handleSearch={this.handleSearch}
+          handleShowMovie={this.handleShowMovie} 
         />
       </div>
     );

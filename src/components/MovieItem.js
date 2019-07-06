@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MovieItem = ({title, year, poster}) => {
+const MovieItem = ({title, year, showMovie, poster}) => {
   return(
-    <li>{title} - {year}</li>
+    <li onClick={ showMovie }>{title} - {year}</li>
   )
 }
 

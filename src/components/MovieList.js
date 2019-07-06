@@ -25,13 +25,14 @@ class MovieList extends Component{
 
 
   render() {
-
+    let {handleShowMovie} = this.props;
     let MovieItems = this.props.movies.map(m => (
       <MovieItem
         key={m.imdbID}
         title={m.Title}
         year={m.Year}
         poster={m.Poster}
+        showMovie={handleShowMovie.bind(this, m.Title, m.Year)}
       />
     ));
     return (

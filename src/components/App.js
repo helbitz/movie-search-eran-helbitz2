@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../scss/main.scss';
 import { searchMovies, getMovie } from "../api/api";
+import Navbar from './Navbar';
 import MovieInput from './MovieInput';
 import MovieList from './MovieList';
 import ShowMovie from './ShowMovie';
@@ -36,6 +37,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <MovieInput handleSearch={this.handleSearch} />
         <MovieList
           movies={this.state.movies}

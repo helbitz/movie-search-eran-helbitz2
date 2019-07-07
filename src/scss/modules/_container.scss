@@ -1,0 +1,28 @@
+.container {
+  padding-right: 18px;
+  padding-left: 18px;
+  max-width: 1236px;
+  margin: 0 auto;
+
+  &__relative {
+    position: relative;
+  }
+
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__medium {
+    max-width: 976px;
+  }
+
+  &__margin {
+    margin-bottom: 1rem;
+
+    @include atSmall {
+      margin-bottom: 2.875rem;
+
+    }
+  }
+}

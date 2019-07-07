@@ -26,16 +26,26 @@ class MovieInput extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <label>
-            <input
-              type="text"
-              value={this.state.input}
-              autoComplete="off"
-              placeholder="Search"
-              onChange={this.handleChange}
-            />
-          </label>
-          <button type="submit">Search</button>
+          <div className="container">
+            <div className="container__relative container__margin justified">
+              <label>
+                <input
+                  type="text"
+                  value={this.state.input}
+                  autoComplete="off"
+                  placeholder="Search"
+                  onChange={this.handleChange}
+                  className="search"
+                  required
+                />
+              </label>
+              <button type="submit" className="iconbox">
+                <span className="iconbox__icon">
+                  <i class="fa fa-search" />
+                </span>
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     );

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../scss/main.scss';
 import { searchMovies, getMovie } from "../api/api";
+import MovieInput from './MovieInput';
 import MovieList from './MovieList';
 import ShowMovie from './ShowMovie';
 
@@ -33,15 +34,14 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.movie)
     return (
       <div>
+        <MovieInput handleSearch={this.handleSearch} />
         <MovieList
-          movies = {this.state.movies} 
-          handleSearch={this.handleSearch}
-          handleShowMovie={this.handleShowMovie} 
+          movies={this.state.movies}
+          handleShowMovie={this.handleShowMovie}
         />
-        <ShowMovie movieInfo={this.state.movie}/>
+        <ShowMovie movieInfo={this.state.movie} />
       </div>
     );
   }

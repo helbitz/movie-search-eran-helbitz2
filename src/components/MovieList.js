@@ -1,32 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import MovieItem from './MovieItem';
 
-class MovieList extends Component{
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      input:''
-    }
-    this.handleChange = this.handleChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  handleChange(e) {
-    this.setState({ input: e.target.value });
-    
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
-    this.props.handleSearch(this.state.input); 
-    this.setState({input: ''})
-  }
-
-
-  render() {
-    let {handleShowMovie} = this.props;
-    let MovieItems = this.props.movies.map(m => (
+const MovieList = ({handleShowMovie, movies}) => {
+    let MovieItems = movies.map(m => (
       <MovieItem
         key={m.imdbID}
         title={m.Title}
@@ -34,25 +10,13 @@ class MovieList extends Component{
         poster={m.Poster}
         showMovie={handleShowMovie.bind(this, m.Title, m.Year)}
       />
-    ));
+    ))
+
     return (
       <div>
-        <form onSubmit={this.onSubmit}>
-          <label>
-            <input
-              type="text"
-              value={this.state.input}
-              autoComplete="off"
-              placeholder="Search"
-              onChange={this.handleChange}
-            />
-          </label>
-          <button type="submit">Search</button>
-          {MovieItems}
-        </form>
+        {MovieItems}
       </div>
-    );
-  }
-} 
+    )
+}
 
 export default MovieList;

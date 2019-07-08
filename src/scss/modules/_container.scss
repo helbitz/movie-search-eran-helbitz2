@@ -1,16 +1,17 @@
 .container {
   padding-right: 18px;
   padding-left: 18px;
-  max-width: 1236px;
   margin: 0 auto;
 
   &__relative {
     position: relative;
   }
 
-  .justified {
-    display: flex;
-    justify-content: center;
+  .flex {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
   }
 
   .container {

@@ -27,8 +27,7 @@ class MovieInput extends Component {
       <div>
         <form onSubmit={this.onSubmit}>
           <div className="container">
-            <div className="container__relative container__margin justified">
-              <label>
+            <div className="container__margin flex">
                 <input
                   type="text"
                   value={this.state.input}
@@ -38,7 +37,6 @@ class MovieInput extends Component {
                   className="search"
                   required
                 />
-              </label>
               <button type="submit" className="iconbox">
                 <span className="iconbox__icon">
                   <i class="fa fa-search" />

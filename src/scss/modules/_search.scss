@@ -1,5 +1,9 @@
 .search {
-  padding: .75rem 2.75rem .75rem .75rem;
+  padding: .75rem .75rem;
+  display: inline-block;
+  overflow: visible;
+  width: 75%;
+  vertical-align: middle;
   border-radius: 20px;
   border: 1px solid #dfe1e5;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .12), 0 2px 10px 0 rgba(0, 0, 0, .08);
@@ -7,15 +11,15 @@
   outline: none;
 
   @include atSmaller {
-    padding: .75rem 7.75rem .75rem .75rem;
+    width: 80%;
   }
 
   @include atSmall {
-    padding: .75rem 10.75rem .75rem .75rem;
+    width: 70%;
   }
 
   @include atMedium {
-    padding: .75rem 20.75rem .75rem .75rem;
+    width: 60%;
   }
 
   

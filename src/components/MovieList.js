@@ -14,7 +14,13 @@ const MovieList = ({handleShowMovie, movies}) => {
 
     return (
       <div>
-        {MovieItems}
+        <div className='container'>
+          <div className='card'>
+            <div className='card__group'>
+              {MovieItems}
+            </div>
+          </div>
+        </div>
       </div>
     )
 }

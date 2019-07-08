@@ -39,7 +39,7 @@ class MovieInput extends Component {
                 />
               <button type="submit" className="iconbox">
                 <span className="iconbox__icon">
-                  <i class="fa fa-search" />
+                  <i className="fa fa-search" />
                 </span>
               </button>
             </div>

@@ -23,7 +23,10 @@ class App extends Component {
       let movies = [];
       movies = [...data];
       this.setState({ movies });
-    });  
+    })
+    .catch(error => 
+      console.log(error)
+    )  
   }
   
   handleShowMovie(title, year){

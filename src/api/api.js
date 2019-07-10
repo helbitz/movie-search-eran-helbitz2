@@ -10,7 +10,7 @@ export function searchMovies(searchTerm) {
         return resolve(response.data.Search)
       })
        .catch(error => {
-        return reject(console.log(error));
+        return reject(error);
       });
     })  
   }

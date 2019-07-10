@@ -33,9 +33,17 @@ const ShowMovie = ({ movieInfo }) => {
           <h3>{Title} ({Year})</h3>
           <p><b>Released:</b> {Released}</p>
           <p><b>Runtime:</b> {Runtime}</p>
-          <p><b>Rated:</b> {Rated}</p>
           <p><b>Genre:</b> {Genre}</p>
+          <p><b>Rated:</b> {Rated}</p>
+          <p><b>Actors:</b> {Actors}</p>
+          <p><b>Director:</b> {Director}</p>
+          <p><b>Writer:</b> {Writer}</p>
+          <p><b>Box Office:</b> {BoxOffice}</p>
+          <p><b>Production:</b> {Production}</p>
+          <p><b>Awards:</b> {Awards}</p>
+          <p><b>IMDd Rating:</b> {imdbRating}</p>
         </div>
+        <p className='grid__overview'><b>Overiew:</b> {Plot}</p>
       </div>
     </div>
   );

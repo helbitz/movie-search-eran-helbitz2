@@ -7,7 +7,6 @@ export function searchMovies(searchTerm) {
     return new Promise((resolve, reject) => {
       axios.get(url)
       .then(response => {
-        console.log(response)
         return resolve({
           search: response.data.Search || response.data.Error,
           response: response.data.Response

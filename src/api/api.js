@@ -1,16 +1,17 @@
 import axios from 'axios';
 
-export function searchMovies(searchTerm) {
+export function searchMovies(searchTerm, pageNumber) {
   console.log(searchTerm)
   if(searchTerm) {
-    let url = `http://www.omdbapi.com/?s=${searchTerm}&apikey=${process.env.REACT_APP_API_KEY}`
+    let url = `http://www.omdbapi.com/?s=${searchTerm}&page=${pageNumber}&apikey=${process.env.REACT_APP_API_KEY}`
     return new Promise((resolve, reject) => {
       axios.get(url)
       .then(response => {
         return resolve({
           search: response.data.Search || response.data.Error,
-          response: response.data.Response
-        })
+          response: response.data.Response,
+          totalResults: response.data.totalResults
+        });
       })
        .catch(error => {
          console.log(error)

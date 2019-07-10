@@ -2,7 +2,7 @@ import React from 'react';
 import MovieItem from './MovieItem';
 
 const MovieList = ({handleShowMovie, movies}) => {
-    let MovieItems = movies.map(m => (
+    var MovieItems = movies[0].search.map(m => (
       <MovieItem
         key={m.imdbID}
         title={m.Title}

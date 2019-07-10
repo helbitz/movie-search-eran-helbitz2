@@ -12,7 +12,9 @@ class App extends Component {
     super(props);
     this.state = {
       movies: [],
-      movie: {}
+      movie: {},
+      showMovie: false,
+      showMovies: false,
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleShowMovie = this.handleShowMovie.bind(this);
@@ -21,8 +23,8 @@ class App extends Component {
   handleSearch(searchTerm) {
     searchMovies(searchTerm).then(data => { 
       let movies = [];
-      movies = [...data];
-      this.setState({ movies });
+      movies = [data];
+      this.setState({ movies, showMovie: false, showMovies: true });
     })
     .catch(error => 
       console.log(error)
@@ -33,20 +35,23 @@ class App extends Component {
     getMovie(title, year).then(data => {
       let movie = {};
       movie = {...data};
-      this.setState({ movie });
+      this.setState({ movie, showMovie: true, showMovies: false });
     })
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <Navbar />
         <MovieInput handleSearch={this.handleSearch} />
-        <MovieList
-          movies={this.state.movies}
-          handleShowMovie={this.handleShowMovie}
-        />
-        <ShowMovie movieInfo={this.state.movie} />
+        {(this.state.showMovies &&
+          <MovieList
+            movies={this.state.movies}
+            handleShowMovie={this.handleShowMovie}
+          />
+        )} 
+        {(this.state.showMovie && <ShowMovie movieInfo={this.state.movie} />)}
       </div>
     );
   }

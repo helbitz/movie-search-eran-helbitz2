@@ -7,9 +7,14 @@ export function searchMovies(searchTerm) {
     return new Promise((resolve, reject) => {
       axios.get(url)
       .then(response => {
-        return resolve(response.data.Search)
+        console.log(response)
+        return resolve({
+          search: response.data.Search || response.data.Error,
+          response: response.data.Response
+        })
       })
        .catch(error => {
+         console.log(error)
         return reject(error);
       });
     })  

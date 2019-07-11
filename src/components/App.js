@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import MovieInput from './MovieInput';
 import MovieList from './MovieList';
 import ShowMovie from './ShowMovie';
+import Footer from './Footer';
 
 
 class App extends Component {
@@ -43,7 +44,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='main-container'>
         <Navbar />
         <MovieInput handleSearch={this.handleSearch} />
         {this.state.showMovies && (
@@ -56,6 +57,7 @@ class App extends Component {
           />
         )}
         {this.state.showMovie && <ShowMovie movieInfo={this.state.movie} />}
+        <Footer />
       </div>
     );
   }

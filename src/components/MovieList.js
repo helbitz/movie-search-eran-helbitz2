@@ -15,7 +15,6 @@ const MovieList = ({handleShowMovie, movies, handleSearch, activePage, searchTer
     ))
 
     function handlePageChange(pageNumber) {
-      console.log(pageNumber)
       handleSearch(searchTerm, pageNumber);
     }
 

@@ -21,6 +21,7 @@ class App extends Component {
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleShowMovie = this.handleShowMovie.bind(this);
+    this.handleFloatButton = this.handleFloatButton.bind(this);
   }
 
   handleSearch(searchTerm, pageNumber=1) {
@@ -42,6 +43,10 @@ class App extends Component {
     })
   }
 
+  handleFloatButton() {
+    this.setState({ showMovie: false, showMovies: true });
+  }
+
   render() {
     return (
       <div className='main-container'>
@@ -56,7 +61,11 @@ class App extends Component {
             activePage={this.state.activePage}
           />
         )}
-        {this.state.showMovie && <ShowMovie movieInfo={this.state.movie} />}
+        {this.state.showMovie && 
+          <ShowMovie 
+            movieInfo={this.state.movie}
+            handleFloatButton={this.handleFloatButton} 
+          />}
         <Footer />
       </div>
     );

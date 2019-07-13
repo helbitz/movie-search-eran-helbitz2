@@ -27,6 +27,7 @@ const MovieList = ({handleShowMovie, movies, handleSearch, activePage, searchTer
                 <div className="card__group">{MovieItems}</div>
               </div>
               <Pagination
+                hideDisabled
                 activePage={activePage}
                 itemsCountPerPage={10}
                 totalItemsCount={movies[0].totalResults}
@@ -34,6 +35,9 @@ const MovieList = ({handleShowMovie, movies, handleSearch, activePage, searchTer
                 onChange={handlePageChange}
               />
             </div>
+            <a href='#pageTop' className="btn-float">
+              <i className="fa fa-chevron-up" />
+            </a>
           </div>
         ) : (
           <div className="container">

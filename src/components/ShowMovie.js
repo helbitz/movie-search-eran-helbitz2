@@ -24,9 +24,10 @@ const ShowMovie = ({ movieInfo }) => {
     Production
   } = movieInfo;
   return (
-    <div className="container">
-      <div className="grid">
-        <div className="grid__image">
+    <div className="jumbotron">
+       <div className="container">
+        <div className="grid">
+          <div className="grid__image">
           <img src={Poster} alt={Title} onError={addDefault} />
         </div>
         <div className="grid__content">
@@ -41,10 +42,11 @@ const ShowMovie = ({ movieInfo }) => {
           <p><b>Box Office:</b> {BoxOffice}</p>
           <p><b>Production:</b> {Production}</p>
           <p><b>Awards:</b> {Awards}</p>
-          <p><b>IMDd Rating:</b> {imdbRating}</p>
+          <p><b>IMDb Rating:</b> {imdbRating}</p>
         </div>
         <p className='grid__overview'><b>Overiew:</b> {Plot}</p>
       </div>
+    </div>
     </div>
   );
 }

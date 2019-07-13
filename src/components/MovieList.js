@@ -37,7 +37,7 @@ const MovieList = ({handleShowMovie, movies, handleSearch, activePage, searchTer
           </div>
         ) : (
           <div className="container">
-            <h1 className="flex errorFont">Oops, {movies[0].search}</h1>
+            <h1 className="flex">Oops, {movies[0].search}</h1>
           </div>
         )}
       </div>

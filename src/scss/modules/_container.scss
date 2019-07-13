@@ -5,10 +5,19 @@
    position: relative;
 }
 .container {
-  padding-right: 18px;
-  padding-left: 18px;
+  
   margin-right: auto;
   margin-left: auto;
+
+  @include atMedium {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  @include atSmaller {
+    padding-right: 0;
+    padding-left: 0;
+  }
 
   &__relative {
     position: relative;
@@ -24,10 +33,6 @@
   .container {
     padding-right: 0;
     padding-left: 0;
-  }
-
-  .errorFont {
-    font-family: 'Jua', sans-serif;
   }
 
   &__medium {

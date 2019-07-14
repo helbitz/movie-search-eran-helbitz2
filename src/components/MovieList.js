@@ -1,12 +1,13 @@
 import React from 'react';
 import MovieItem from './MovieItem';
 import Pagination from "react-js-pagination";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const MovieList = ({handleShowMovie, movies, handleSearch, activePage, searchTerm}) => {
     var ShowList = movies[0].response;
-    var MovieItems = ShowList === 'True' && movies[0].search.map(m => (
+    var MovieItems = ShowList === 'True' && movies[0].search.map((m, idx) => (
       <MovieItem
-        key={m.imdbID}
+        key={m.imdbID + idx}
         title={m.Title}
         year={m.Year}
         poster={m.Poster}
@@ -19,7 +20,7 @@ const MovieList = ({handleShowMovie, movies, handleSearch, activePage, searchTer
     }
 
     return (
-      <div>
+      <section>
         {ShowList === "True" ? (
           <div>
             <div className="container">
@@ -35,16 +36,16 @@ const MovieList = ({handleShowMovie, movies, handleSearch, activePage, searchTer
                 onChange={handlePageChange}
               />
             </div>
-            <a href='#pageTop' className="btn-float">
+            <AnchorLink href="#pageTop" className="btn-float">
               <i className="fa fa-chevron-up" />
-            </a>
+            </AnchorLink>
           </div>
         ) : (
           <div className="container">
             <h1 className="flex">Oops, {movies[0].search}</h1>
           </div>
         )}
-      </div>
+      </section>
     );
 }
 

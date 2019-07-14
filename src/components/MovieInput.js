@@ -24,7 +24,7 @@ class MovieInput extends Component {
 
   render() {
     return (
-      <div>
+      <section>
         <form onSubmit={this.onSubmit}>
           <div className="container">
             <div className="container__margin flex">
@@ -45,7 +45,7 @@ class MovieInput extends Component {
             </div>
           </div>
         </form>
-      </div>
+      </section>
     );
   }
 }

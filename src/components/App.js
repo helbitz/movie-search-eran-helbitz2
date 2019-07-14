@@ -23,6 +23,7 @@ class App extends Component {
     this.handleShowMovie = this.handleShowMovie.bind(this);
     this.handleFloatButton = this.handleFloatButton.bind(this);
   }
+    
 
   handleSearch(searchTerm, pageNumber=1) {
     searchMovies(searchTerm, pageNumber).then(data => { 

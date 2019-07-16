@@ -22,6 +22,24 @@
     position: relative;
   }
 
+  .placeholder {
+     font-size: 1.2em;
+     color: #bac0bd;
+
+    @include atSmaller {
+      font-size: 1.4em;
+    }
+
+    @include atSmall {
+      font-size: 1.7em;
+    }
+
+    @include atMedium {
+      font-size: 2em;
+    }
+    
+  }
+
   .flex {
       display: flex;
       flex-flow: row wrap;

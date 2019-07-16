@@ -18,6 +18,7 @@ class App extends Component {
       activePage: 1,
       showMovie: false,
       showMovies: false,
+      showPlaceholder: true
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleShowMovie = this.handleShowMovie.bind(this);
@@ -29,7 +30,15 @@ class App extends Component {
     searchMovies(searchTerm, pageNumber).then(data => { 
       let movies = [];
       movies = [data];
-      this.setState({ movies, searchTerm, activePage: pageNumber, showMovie: false, showMovies: true });
+      this.setState(
+        { 
+          movies, 
+          searchTerm, 
+          activePage: pageNumber, 
+          showMovie: false, 
+          showMovies: true,
+          showPlaceholder: false
+        });
     })
     .catch(error => 
       console.log(error)
@@ -50,9 +59,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className='main-container'>
+      <div className="main-container">
         <Navbar />
         <MovieInput handleSearch={this.handleSearch} />
+        {this.state.showPlaceholder && (
+          <div className="container">
+            <h1 className="flex placeholder">Please enter a search term above...</h1>
+          </div>
+        )}
         {this.state.showMovies && (
           <MovieList
             movies={this.state.movies}
@@ -62,11 +76,12 @@ class App extends Component {
             activePage={this.state.activePage}
           />
         )}
-        {this.state.showMovie && 
-          <ShowMovie 
+        {this.state.showMovie && (
+          <ShowMovie
             movieInfo={this.state.movie}
-            handleFloatButton={this.handleFloatButton} 
-          />}
+            handleFloatButton={this.handleFloatButton}
+          />
+        )}
         <Footer />
       </div>
     );

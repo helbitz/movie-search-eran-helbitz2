@@ -22,7 +22,7 @@ export function searchMovies(searchTerm, pageNumber) {
 
 
 export function getMovie(title, year) {
-  let url = `http://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=${process.env.REACT_APP_API_KEY}`
+  let url = `https://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=${process.env.REACT_APP_API_KEY}`
   return new Promise((resolve, reject) => {
     axios.get(url)
     .then(response => {

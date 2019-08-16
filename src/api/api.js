@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function searchMovies(searchTerm, pageNumber) {
   if(searchTerm) {
-    let url = `http://www.omdbapi.com/?s=${searchTerm}&page=${pageNumber}&apikey=${process.env.REACT_APP_API_KEY}`
+    let url = `https://www.omdbapi.com/?s=${searchTerm}&page=${pageNumber}&apikey=${process.env.REACT_APP_API_KEY}`
     return new Promise((resolve, reject) => {
       axios.get(url)
       .then(response => {
